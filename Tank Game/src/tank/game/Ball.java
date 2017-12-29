@@ -1,0 +1,40 @@
+package tank.game;
+
+import java.awt.Color;
+
+public class Ball {
+    
+    public int x,y;
+    public int speedx;
+    public Color CurrentColor;
+    
+    public Ball(int x,int y,int speedx,Color color)
+    {
+        this.x=x;
+        this.y=y;
+        this.speedx=speedx;
+        this.CurrentColor=color;
+    }
+    
+    public Ball()
+    {
+        x=0;
+        y=0;
+        speedx=10;
+        CurrentColor=Color.GREEN;
+    }
+    
+    public  void move(int width)
+    {
+        x += speedx;
+        if (x + 50 > width)
+        {
+            speedx = -speedx;
+        }
+        if (x < 0)
+        {
+            speedx = -speedx;
+        }
+    }
+    
+}
